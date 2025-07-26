@@ -1,0 +1,33 @@
+{
+  "Files": [
+    {
+      "Id": "C:\\laragon\\www\\FYP-Link\\wwwroot\\proposals\\0964aab4-aa27-4f43-84bb-735857f0289f_Passenger Info.pdf",
+      "PackagePath": "staticwebassets\\proposals\\0964aab4-aa27-4f43-84bb-735857f0289f_Passenger Info.pdf"
+    },
+    {
+      "Id": "C:\\laragon\\www\\FYP-Link\\wwwroot\\proposals\\948814fe-caab-4e86-920d-cf3cc9df4d60_courseRegistrationSlipUg_pdf.pdf",
+      "PackagePath": "staticwebassets\\proposals\\948814fe-caab-4e86-920d-cf3cc9df4d60_courseRegistrationSlipUg_pdf.pdf"
+    },
+    {
+      "Id": "obj\\Debug\\net9.0\\staticwebassets\\msbuild.FYP-Link.Microsoft.AspNetCore.StaticWebAssetEndpoints.props",
+      "PackagePath": "build\\Microsoft.AspNetCore.StaticWebAssetEndpoints.props"
+    },
+    {
+      "Id": "obj\\Debug\\net9.0\\staticwebassets\\msbuild.FYP-Link.Microsoft.AspNetCore.StaticWebAssets.props",
+      "PackagePath": "build\\Microsoft.AspNetCore.StaticWebAssets.props"
+    },
+    {
+      "Id": "obj\\Debug\\net9.0\\staticwebassets\\msbuild.build.FYP-Link.props",
+      "PackagePath": "build\\FYP-Link.props"
+    },
+    {
+      "Id": "obj\\Debug\\net9.0\\staticwebassets\\msbuild.buildMultiTargeting.FYP-Link.props",
+      "PackagePath": "buildMultiTargeting\\FYP-Link.props"
+    },
+    {
+      "Id": "obj\\Debug\\net9.0\\staticwebassets\\msbuild.buildTransitive.FYP-Link.props",
+      "PackagePath": "buildTransitive\\FYP-Link.props"
+    }
+  ],
+  "ElementsToRemove": []
+}

@@ -1,0 +1,170 @@
+{
+  "Version": 1,
+  "ManifestType": "Build",
+  "Endpoints": [
+    {
+      "Route": "proposals/0964aab4-aa27-4f43-84bb-735857f0289f_Passenger Info.7fa0bvjtwu.pdf",
+      "AssetFile": "proposals/0964aab4-aa27-4f43-84bb-735857f0289f_Passenger Info.pdf",
+      "Selectors": [],
+      "ResponseHeaders": [
+        {
+          "Name": "Accept-Ranges",
+          "Value": "bytes"
+        },
+        {
+          "Name": "Cache-Control",
+          "Value": "max-age=31536000, immutable"
+        },
+        {
+          "Name": "Content-Length",
+          "Value": "21246"
+        },
+        {
+          "Name": "Content-Type",
+          "Value": "application/pdf"
+        },
+        {
+          "Name": "ETag",
+          "Value": "\"w2t3Zq4QFeNOLhPeoUQo9WYVC6IGOAqBjcd8TuxTQFM=\""
+        },
+        {
+          "Name": "Last-Modified",
+          "Value": "Sat, 26 Jul 2025 13:46:14 GMT"
+        }
+      ],
+      "EndpointProperties": [
+        {
+          "Name": "fingerprint",
+          "Value": "7fa0bvjtwu"
+        },
+        {
+          "Name": "integrity",
+          "Value": "sha256-w2t3Zq4QFeNOLhPeoUQo9WYVC6IGOAqBjcd8TuxTQFM="
+        },
+        {
+          "Name": "label",
+          "Value": "proposals/0964aab4-aa27-4f43-84bb-735857f0289f_Passenger Info.pdf"
+        }
+      ]
+    },
+    {
+      "Route": "proposals/0964aab4-aa27-4f43-84bb-735857f0289f_Passenger Info.pdf",
+      "AssetFile": "proposals/0964aab4-aa27-4f43-84bb-735857f0289f_Passenger Info.pdf",
+      "Selectors": [],
+      "ResponseHeaders": [
+        {
+          "Name": "Accept-Ranges",
+          "Value": "bytes"
+        },
+        {
+          "Name": "Cache-Control",
+          "Value": "no-cache"
+        },
+        {
+          "Name": "Content-Length",
+          "Value": "21246"
+        },
+        {
+          "Name": "Content-Type",
+          "Value": "application/pdf"
+        },
+        {
+          "Name": "ETag",
+          "Value": "\"w2t3Zq4QFeNOLhPeoUQo9WYVC6IGOAqBjcd8TuxTQFM=\""
+        },
+        {
+          "Name": "Last-Modified",
+          "Value": "Sat, 26 Jul 2025 13:46:14 GMT"
+        }
+      ],
+      "EndpointProperties": [
+        {
+          "Name": "integrity",
+          "Value": "sha256-w2t3Zq4QFeNOLhPeoUQo9WYVC6IGOAqBjcd8TuxTQFM="
+        }
+      ]
+    },
+    {
+      "Route": "proposals/948814fe-caab-4e86-920d-cf3cc9df4d60_courseRegistrationSlipUg_pdf.pdf",
+      "AssetFile": "proposals/948814fe-caab-4e86-920d-cf3cc9df4d60_courseRegistrationSlipUg_pdf.pdf",
+      "Selectors": [],
+      "ResponseHeaders": [
+        {
+          "Name": "Accept-Ranges",
+          "Value": "bytes"
+        },
+        {
+          "Name": "Cache-Control",
+          "Value": "no-cache"
+        },
+        {
+          "Name": "Content-Length",
+          "Value": "59806"
+        },
+        {
+          "Name": "Content-Type",
+          "Value": "application/pdf"
+        },
+        {
+          "Name": "ETag",
+          "Value": "\"cJDIVKqOBdSeHCcvL3vTETyaKZG1or16JfsDwdsEj8s=\""
+        },
+        {
+          "Name": "Last-Modified",
+          "Value": "Sat, 26 Jul 2025 15:16:33 GMT"
+        }
+      ],
+      "EndpointProperties": [
+        {
+          "Name": "integrity",
+          "Value": "sha256-cJDIVKqOBdSeHCcvL3vTETyaKZG1or16JfsDwdsEj8s="
+        }
+      ]
+    },
+    {
+      "Route": "proposals/948814fe-caab-4e86-920d-cf3cc9df4d60_courseRegistrationSlipUg_pdf.s54ac8lxpj.pdf",
+      "AssetFile": "proposals/948814fe-caab-4e86-920d-cf3cc9df4d60_courseRegistrationSlipUg_pdf.pdf",
+      "Selectors": [],
+      "ResponseHeaders": [
+        {
+          "Name": "Accept-Ranges",
+          "Value": "bytes"
+        },
+        {
+          "Name": "Cache-Control",
+          "Value": "max-age=31536000, immutable"
+        },
+        {
+          "Name": "Content-Length",
+          "Value": "59806"
+        },
+        {
+          "Name": "Content-Type",
+          "Value": "application/pdf"
+        },
+        {
+          "Name": "ETag",
+          "Value": "\"cJDIVKqOBdSeHCcvL3vTETyaKZG1or16JfsDwdsEj8s=\""
+        },
+        {
+          "Name": "Last-Modified",
+          "Value": "Sat, 26 Jul 2025 15:16:33 GMT"
+        }
+      ],
+      "EndpointProperties": [
+        {
+          "Name": "fingerprint",
+          "Value": "s54ac8lxpj"
+        },
+        {
+          "Name": "integrity",
+          "Value": "sha256-cJDIVKqOBdSeHCcvL3vTETyaKZG1or16JfsDwdsEj8s="
+        },
+        {
+          "Name": "label",
+          "Value": "proposals/948814fe-caab-4e86-920d-cf3cc9df4d60_courseRegistrationSlipUg_pdf.pdf"
+        }
+      ]
+    }
+  ]
+}
