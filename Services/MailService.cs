@@ -59,6 +59,28 @@ namespace FYP_Link.Services
             await SendEmailAsync(email);
         }
 
+        public async Task SendPasswordResetLinkAsync(string toEmail, string resetLink)
+        {
+            var email = new MimeMessage();
+            email.From.Add(new MailboxAddress(_mailSettings.FromName, _mailSettings.FromAddress));
+            email.To.Add(MailboxAddress.Parse(toEmail));
+            email.Subject = "Reset Your FYP-Link Password";
+
+            var builder = new BodyBuilder();
+            builder.HtmlBody = $@"
+                <h2>Password Reset Request</h2>
+                <p>You have requested to reset your password for your FYP-Link account.</p>
+                <p>Click the link below to reset your password:</p>
+                <p><a href='{resetLink}'>Reset Password</a></p>
+                <p><strong>Important:</strong> This link will expire in 24 hours for security reasons.</p>
+                <p>If you did not request this password reset, please ignore this email.</p>
+                <p>Best regards,<br>FYP-Link Team</p>";
+
+            email.Body = builder.ToMessageBody();
+
+            await SendEmailAsync(email);
+        }
+
         private async Task SendEmailAsync(MimeMessage email)
         {
             using var smtp = new SmtpClient();

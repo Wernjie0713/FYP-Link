@@ -25,5 +25,7 @@ namespace FYP_Link.Models
 
         [Required]
         public bool IsCurrent { get; set; } = true;
+
+        public DateTime CreatedAt { get; set; } = DateTime.UtcNow;
     }
 }

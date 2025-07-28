@@ -40,5 +40,8 @@ namespace FYP_Link.Models
         public Lecturer Supervisor { get; set; } = null!;
 
         public ICollection<Evaluation> Evaluations { get; set; } = new List<Evaluation>();
+
+        public string? SupervisorComment { get; set; }
+        public DateTime? SupervisorCommentedAt { get; set; }
     }
 }

@@ -13,7 +13,7 @@ using System.Reflection;
 [assembly: System.Reflection.AssemblyCompanyAttribute("FYP-Link")]
 [assembly: System.Reflection.AssemblyConfigurationAttribute("Debug")]
 [assembly: System.Reflection.AssemblyFileVersionAttribute("1.0.0.0")]
-[assembly: System.Reflection.AssemblyInformationalVersionAttribute("1.0.0")]
+[assembly: System.Reflection.AssemblyInformationalVersionAttribute("1.0.0+57378f081405e7c209aecac105004de9b4f113da")]
 [assembly: System.Reflection.AssemblyProductAttribute("FYP-Link")]
 [assembly: System.Reflection.AssemblyTitleAttribute("FYP-Link")]
 [assembly: System.Reflection.AssemblyVersionAttribute("1.0.0.0")]

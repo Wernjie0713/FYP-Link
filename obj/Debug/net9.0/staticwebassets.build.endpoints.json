@@ -85,8 +85,8 @@
       ]
     },
     {
-      "Route": "proposals/948814fe-caab-4e86-920d-cf3cc9df4d60_courseRegistrationSlipUg_pdf.pdf",
-      "AssetFile": "proposals/948814fe-caab-4e86-920d-cf3cc9df4d60_courseRegistrationSlipUg_pdf.pdf",
+      "Route": "proposals/342ca124-97c8-4a12-b94c-c5a158c6a27f_AD_IndividualTest_2025.pdf",
+      "AssetFile": "proposals/342ca124-97c8-4a12-b94c-c5a158c6a27f_AD_IndividualTest_2025.pdf",
       "Selectors": [],
       "ResponseHeaders": [
         {
@@ -99,7 +99,7 @@
         },
         {
           "Name": "Content-Length",
-          "Value": "59806"
+          "Value": "823772"
         },
         {
           "Name": "Content-Type",
@@ -107,23 +107,23 @@
         },
         {
           "Name": "ETag",
-          "Value": "\"cJDIVKqOBdSeHCcvL3vTETyaKZG1or16JfsDwdsEj8s=\""
+          "Value": "\"aIpJz2QCSKG1t9SEa7Nd9PyHQnyE1w/iyJ7pkLXYA6I=\""
         },
         {
           "Name": "Last-Modified",
-          "Value": "Sat, 26 Jul 2025 15:16:33 GMT"
+          "Value": "Sat, 26 Jul 2025 15:44:18 GMT"
         }
       ],
       "EndpointProperties": [
         {
           "Name": "integrity",
-          "Value": "sha256-cJDIVKqOBdSeHCcvL3vTETyaKZG1or16JfsDwdsEj8s="
+          "Value": "sha256-aIpJz2QCSKG1t9SEa7Nd9PyHQnyE1w/iyJ7pkLXYA6I="
         }
       ]
     },
     {
-      "Route": "proposals/948814fe-caab-4e86-920d-cf3cc9df4d60_courseRegistrationSlipUg_pdf.s54ac8lxpj.pdf",
-      "AssetFile": "proposals/948814fe-caab-4e86-920d-cf3cc9df4d60_courseRegistrationSlipUg_pdf.pdf",
+      "Route": "proposals/342ca124-97c8-4a12-b94c-c5a158c6a27f_AD_IndividualTest_2025.sj5qr3vksl.pdf",
+      "AssetFile": "proposals/342ca124-97c8-4a12-b94c-c5a158c6a27f_AD_IndividualTest_2025.pdf",
       "Selectors": [],
       "ResponseHeaders": [
         {
@@ -136,7 +136,7 @@
         },
         {
           "Name": "Content-Length",
-          "Value": "59806"
+          "Value": "823772"
         },
         {
           "Name": "Content-Type",
@@ -144,25 +144,25 @@
         },
         {
           "Name": "ETag",
-          "Value": "\"cJDIVKqOBdSeHCcvL3vTETyaKZG1or16JfsDwdsEj8s=\""
+          "Value": "\"aIpJz2QCSKG1t9SEa7Nd9PyHQnyE1w/iyJ7pkLXYA6I=\""
         },
         {
           "Name": "Last-Modified",
-          "Value": "Sat, 26 Jul 2025 15:16:33 GMT"
+          "Value": "Sat, 26 Jul 2025 15:44:18 GMT"
         }
       ],
       "EndpointProperties": [
         {
           "Name": "fingerprint",
-          "Value": "s54ac8lxpj"
+          "Value": "sj5qr3vksl"
         },
         {
           "Name": "integrity",
-          "Value": "sha256-cJDIVKqOBdSeHCcvL3vTETyaKZG1or16JfsDwdsEj8s="
+          "Value": "sha256-aIpJz2QCSKG1t9SEa7Nd9PyHQnyE1w/iyJ7pkLXYA6I="
         },
         {
           "Name": "label",
-          "Value": "proposals/948814fe-caab-4e86-920d-cf3cc9df4d60_courseRegistrationSlipUg_pdf.pdf"
+          "Value": "proposals/342ca124-97c8-4a12-b94c-c5a158c6a27f_AD_IndividualTest_2025.pdf"
         }
       ]
     }

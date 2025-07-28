@@ -29,7 +29,7 @@ namespace FYP_Link.Controllers
 
             var student = await _context.Students
                 .Include(s => s.Supervisor)
-                .Include(s => s.Proposals) // Eagerly load proposals
+                .Include(s => s.Proposal) // Eagerly load proposal
                 .FirstOrDefaultAsync(s => s.ApplicationUserId == user.Id);
 
             if (student == null) return NotFound();
@@ -42,27 +42,26 @@ namespace FYP_Link.Controllers
                 student.SupervisorId,
                 SupervisorName = student.Supervisor?.Name,
                 // Add a flag for the frontend to easily check if a proposal exists
-                HasProposal = student.Proposals.Any()
+                HasProposal = student.Proposal != null
             });
         }
 
-        [HttpGet("my-proposals")]
-        public async Task<IActionResult> GetMyProposals()
+        [HttpGet("my-proposal")]
+        public async Task<IActionResult> GetMyProposal()
         {
             var user = await _userManager.GetUserAsync(User);
             if (user == null) return Unauthorized();
 
             var student = await _context.Students
+                .Include(s => s.Proposal)
+                    .ThenInclude(p => p.Supervisor)
                 .FirstOrDefaultAsync(s => s.ApplicationUserId == user.Id);
 
             if (student == null) return NotFound(new { Message = "Student profile not found" });
 
-            var proposals = await _context.Proposals
-                .Where(p => p.StudentId == student.Id)
-                .Include(p => p.Supervisor)
-                .ToListAsync();
+            if (student.Proposal == null) return NotFound(new { Message = "No proposal found" });
 
-            return Ok(proposals);
+            return Ok(student.Proposal);
         }
         
         [HttpPut("my-profile")]

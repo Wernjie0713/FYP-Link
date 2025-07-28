@@ -35,6 +35,18 @@ namespace FYP_Link.Controllers
             public string Password { get; set; } = string.Empty;
         }
 
+        public class ForgotPasswordDto
+        {
+            public string Email { get; set; } = string.Empty;
+        }
+
+        public class ResetPasswordDto
+        {
+            public string UserId { get; set; } = string.Empty;
+            public string Token { get; set; } = string.Empty;
+            public string NewPassword { get; set; } = string.Empty;
+        }
+
         public AuthController(
             UserManager<ApplicationUser> userManager,
             IConfiguration configuration,
@@ -209,6 +221,82 @@ namespace FYP_Link.Controllers
             );
 
             return Ok(new { Token = new JwtSecurityTokenHandler().WriteToken(token) });
+        }
+
+        [HttpPost("forgot-password")]
+        public async Task<IActionResult> ForgotPassword([FromBody] ForgotPasswordDto forgotPasswordDto)
+        {
+            if (!ModelState.IsValid)
+            {
+                return BadRequest(ModelState);
+            }
+
+            var user = await _userManager.FindByEmailAsync(forgotPasswordDto.Email);
+            if (user == null)
+            {
+                // Don't reveal if the user exists or not for security reasons
+                return Ok(new { Message = "If an account with that email exists, a password reset link has been sent." });
+            }
+
+            try
+            {
+                // Generate password reset token
+                var token = await _userManager.GeneratePasswordResetTokenAsync(user);
+                
+                // URL-encode the token to ensure it can be safely passed in a URL
+                var encodedToken = System.Web.HttpUtility.UrlEncode(token);
+                
+                // Construct the reset link
+                var frontendBaseUrl = _configuration["FrontendBaseUrl"];
+                var resetLink = $"{frontendBaseUrl}/reset-password?userId={user.Id}&token={encodedToken}";
+                
+                // Send the reset link via email
+                await _mailService.SendPasswordResetLinkAsync(user.Email!, resetLink);
+                
+                return Ok(new { Message = "If an account with that email exists, a password reset link has been sent." });
+            }
+            catch (Exception ex)
+            {
+                // Log the error but don't expose it to the user
+                Console.WriteLine($"Failed to send password reset email: {ex.Message}");
+                return Ok(new { Message = "If an account with that email exists, a password reset link has been sent." });
+            }
+        }
+
+        [HttpPost("reset-password")]
+        public async Task<IActionResult> ResetPassword([FromBody] ResetPasswordDto resetPasswordDto)
+        {
+            if (!ModelState.IsValid)
+            {
+                return BadRequest(ModelState);
+            }
+
+            var user = await _userManager.FindByIdAsync(resetPasswordDto.UserId);
+            if (user == null)
+            {
+                return BadRequest(new { Message = "Invalid reset link" });
+            }
+
+            try
+            {
+                // URL-decode the token
+                var decodedToken = System.Web.HttpUtility.UrlDecode(resetPasswordDto.Token);
+                
+                // Reset the password
+                var result = await _userManager.ResetPasswordAsync(user, decodedToken, resetPasswordDto.NewPassword);
+                
+                if (!result.Succeeded)
+                {
+                    return BadRequest(new { Message = "Failed to reset password", Errors = result.Errors });
+                }
+
+                return Ok(new { Message = "Password has been reset successfully. You can now log in with your new password." });
+            }
+            catch (Exception ex)
+            {
+                Console.WriteLine($"Failed to reset password: {ex.Message}");
+                return BadRequest(new { Message = "Failed to reset password. Please try again." });
+            }
         }
     }
 }

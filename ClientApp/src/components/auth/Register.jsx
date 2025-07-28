@@ -193,7 +193,7 @@ export default function Register() {
           <button
             type="submit"
             disabled={loading}
-            className="w-full bg-gray-900 text-white font-bold py-2 px-4 rounded hover:bg-gray-800 focus:outline-none focus:shadow-outline disabled:opacity-50 disabled:cursor-not-allowed"
+            className="w-full bg-teal-600 text-white font-bold py-2 px-4 rounded hover:bg-teal-700 focus:outline-none focus:shadow-outline disabled:opacity-50 disabled:cursor-not-allowed"
           >
             {loading ? 'Creating account...' : 'Create Student Account'}
           </button>

@@ -19,6 +19,13 @@ namespace FYP_Link.Data
         {
         }
 
+        protected override void OnConfiguring(DbContextOptionsBuilder optionsBuilder)
+        {
+            optionsBuilder.ConfigureWarnings(warnings =>
+                warnings.Ignore(Microsoft.EntityFrameworkCore.Diagnostics.RelationalEventId.PendingModelChangesWarning));
+            base.OnConfiguring(optionsBuilder);
+        }
+
         protected override void OnModelCreating(ModelBuilder builder)
         {
             // Configure one-to-one relationship between ApplicationUser and Student
@@ -27,6 +34,12 @@ namespace FYP_Link.Data
                 .WithOne()
                 .HasForeignKey<Student>(s => s.ApplicationUserId)
                 .OnDelete(DeleteBehavior.Cascade);
+
+            // Configure one-to-one relationship between Student and Proposal
+            builder.Entity<Student>()
+                .HasOne(s => s.Proposal)
+                .WithOne(p => p.Student)
+                .HasForeignKey<Proposal>(p => p.StudentId);
 
             // Add unique constraint to MatricNumber
             builder.Entity<Student>()
@@ -130,7 +143,7 @@ namespace FYP_Link.Data
                     Department = departments[i % departments.Length],
                     CurrentPosition = positions[i % positions.Length],
                     ApplicationUserId = userId,
-                    CreatedAt = new DateTime(2024, 1, 1, 0, 0, 0, DateTimeKind.Utc)
+                    CreatedAt = DateTime.Parse("2024-01-01T00:00:00Z").ToUniversalTime()
                 });
 
                 // Create user account

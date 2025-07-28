@@ -2,6 +2,7 @@ C:\laragon\www\FYP-Link\bin\Debug\net9.0\appsettings.Development.json
 C:\laragon\www\FYP-Link\bin\Debug\net9.0\appsettings.json
 C:\laragon\www\FYP-Link\bin\Debug\net9.0\ClientApp\package-lock.json
 C:\laragon\www\FYP-Link\bin\Debug\net9.0\ClientApp\package.json
+C:\laragon\www\FYP-Link\bin\Debug\net9.0\FYP-Link.staticwebassets.runtime.json
 C:\laragon\www\FYP-Link\bin\Debug\net9.0\FYP-Link.staticwebassets.endpoints.json
 C:\laragon\www\FYP-Link\bin\Debug\net9.0\FYP-Link.exe
 C:\laragon\www\FYP-Link\bin\Debug\net9.0\FYP-Link.deps.json
@@ -138,6 +139,7 @@ C:\laragon\www\FYP-Link\obj\Debug\net9.0\FYP-Link.AssemblyInfo.cs
 C:\laragon\www\FYP-Link\obj\Debug\net9.0\FYP-Link.csproj.CoreCompileInputs.cache
 C:\laragon\www\FYP-Link\obj\Debug\net9.0\FYP-Link.MvcApplicationPartsAssemblyInfo.cs
 C:\laragon\www\FYP-Link\obj\Debug\net9.0\FYP-Link.MvcApplicationPartsAssemblyInfo.cache
+C:\laragon\www\FYP-Link\obj\Debug\net9.0\FYP-Link.sourcelink.json
 C:\laragon\www\FYP-Link\obj\Debug\net9.0\scopedcss\bundle\FYP-Link.styles.css
 C:\laragon\www\FYP-Link\obj\Debug\net9.0\staticwebassets.build.json
 C:\laragon\www\FYP-Link\obj\Debug\net9.0\staticwebassets.development.json
@@ -154,4 +156,3 @@ C:\laragon\www\FYP-Link\obj\Debug\net9.0\refint\FYP-Link.dll
 C:\laragon\www\FYP-Link\obj\Debug\net9.0\FYP-Link.pdb
 C:\laragon\www\FYP-Link\obj\Debug\net9.0\FYP-Link.genruntimeconfig.cache
 C:\laragon\www\FYP-Link\obj\Debug\net9.0\ref\FYP-Link.dll
-C:\laragon\www\FYP-Link\bin\Debug\net9.0\FYP-Link.staticwebassets.runtime.json

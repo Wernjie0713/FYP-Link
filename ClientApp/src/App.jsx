@@ -9,6 +9,11 @@ import ProtectedRoute from './components/auth/ProtectedRoute';
 import ManagePrograms from './pages/admin/ManagePrograms';
 import ManageLecturers from './pages/admin/ManageLecturers';
 import ManageCommittee from './pages/admin/ManageCommittee';
+import AdminDashboard from './pages/admin/AdminDashboard';
+import StudentDashboard from './pages/student/StudentDashboard';
+import LecturerDashboard from './pages/lecturer/LecturerDashboard';
+import ForgotPassword from './pages/auth/ForgotPassword';
+import ResetPassword from './pages/auth/ResetPassword';
 import ConfirmEmail from './pages/auth/ConfirmEmail';
 import RegistrationSuccess from './pages/auth/RegistrationSuccess';
 import Settings from './pages/Settings';
@@ -18,14 +23,34 @@ import SelectSupervisor from './pages/student/SelectSupervisor';
 import SubmitProposal from './pages/student/SubmitProposal';
 import MyProposal from './pages/student/MyProposal';
 import EditProposal from './pages/student/EditProposal';
+import MyStudents from './pages/supervisor/MyStudents';
+import MyAssignments from './pages/evaluator/MyAssignments';
 
-// Placeholder components for dashboard pages
-const Dashboard = () => (
-  <div>
-    <h1 className="text-3xl font-bold mb-4">Dashboard</h1>
-    <p className="text-gray-600">Welcome to your FYP-Link dashboard!</p>
-  </div>
-);
+// Role-based dashboard component
+const Dashboard = () => {
+  const { user } = useAuth();
+  
+  if (user?.roles?.includes('Admin')) {
+    return <AdminDashboard />;
+  }
+  
+  if (user?.roles?.includes('Student')) {
+    return <StudentDashboard />;
+  }
+  
+  // Check for lecturer roles (Supervisor, Committee, Evaluator)
+  if (user?.roles?.some(role => ['Supervisor', 'Committee', 'Evaluator'].includes(role))) {
+    return <LecturerDashboard />;
+  }
+  
+  // Default dashboard for other roles
+  return (
+    <div>
+      <h1 className="text-3xl font-bold mb-4">Dashboard</h1>
+      <p className="text-gray-600">Welcome to your FYP-Link dashboard!</p>
+    </div>
+  );
+};
 
 const Proposals = () => (
   <div>
@@ -58,6 +83,8 @@ function App() {
             <Route path="/register" element={<Register />} />
             <Route path="/register-success" element={<RegistrationSuccess />} />
             <Route path="/confirm-email" element={<ConfirmEmail />} />
+            <Route path="/forgot-password" element={<ForgotPassword />} />
+            <Route path="/reset-password" element={<ResetPassword />} />
 
             {/* Protected routes */}
             <Route
@@ -147,6 +174,26 @@ function App() {
                 element={
                   <ProtectedRoute allowedRoles={['Committee']}>
                     <ManageProposals />
+                  </ProtectedRoute>
+                }
+              />
+
+              {/* Supervisor routes */}
+              <Route
+                path="supervisor/my-students"
+                element={
+                  <ProtectedRoute allowedRoles={['Supervisor']}>
+                    <MyStudents />
+                  </ProtectedRoute>
+                }
+              />
+
+              {/* Evaluator routes */}
+              <Route
+                path="evaluator/my-assignments"
+                element={
+                  <ProtectedRoute allowedRoles={['Evaluator']}>
+                    <MyAssignments />
                   </ProtectedRoute>
                 }
               />

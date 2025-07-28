@@ -1,4 +1,5 @@
 import { useEffect, useState } from 'react';
+import { CheckCircleOutlined, CloseCircleOutlined } from '@ant-design/icons';
 import api from '../../api/apiClient';
 import { toast } from 'react-toastify';
 
@@ -58,16 +59,18 @@ export default function SupervisorApprovals() {
                   <td className="px-4 py-2 border-b text-center">{student.supervisorName || '-'}</td>
                   <td className="px-4 py-2 border-b space-x-2 text-center">
                     <button
-                      className="bg-green-600 text-white px-3 py-1 rounded hover:bg-green-700"
+                      type="submit"
                       onClick={() => handleAction(student.id, 'approve')}
+                      className="w-1/8 px-4 py-2 bg-teal-600 text-white rounded-md hover:bg-teal-700 focus:outline-none focus:ring-2 focus:ring-teal-500 focus:ring-offset-2 disabled:opacity-50 disabled:cursor-not-allowed"
                     >
-                      Approve
+                      {<CheckCircleOutlined />}
                     </button>
                     <button
-                      className="bg-red-600 text-white px-3 py-1 rounded hover:bg-red-700"
+                      type="submit" 
                       onClick={() => handleAction(student.id, 'reject')}
+                      className="w-1/8 px-4 py-2 bg-red-600 text-white rounded-md hover:bg-red-700 focus:outline-none focus:ring-2 focus:ring-red-500 focus:ring-offset-2 disabled:opacity-50 disabled:cursor-not-allowed"
                     >
-                      Reject
+                      {<CloseCircleOutlined />}
                     </button>
                   </td>
                 </tr>

@@ -51,7 +51,9 @@ namespace FYP_Link.Controllers
                     p.Semester,
                     StudentName = p.Student.Name,
                     SupervisorName = p.Supervisor.Name,
-                    Evaluations = p.Evaluations.Select(e => new {
+                    Evaluations = p.Evaluations
+                    .Where(e => e.IsCurrent)
+                    .Select(e => new {
                         e.Id,
                         e.Result,
                         e.Comments,
@@ -161,6 +163,8 @@ namespace FYP_Link.Controllers
                 p.AcademicSession,
                 p.Semester,
                 p.PdfFilePath,
+                p.SupervisorComment,
+                p.SupervisorCommentedAt,
                 SupervisorName = p.Supervisor.Name,
                 Evaluations = p.Evaluations.Select(e => new {
                     e.Result,

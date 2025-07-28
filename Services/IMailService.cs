@@ -4,5 +4,6 @@ namespace FYP_Link.Services
     {
         Task SendWelcomeEmailAsync(string toEmail, string name);
         Task SendVerificationEmailAsync(string toEmail, string name, string verificationLink);
+        Task SendPasswordResetLinkAsync(string toEmail, string resetLink);
     }
 } 

@@ -12,8 +12,8 @@ using Npgsql.EntityFrameworkCore.PostgreSQL.Metadata;
 namespace FYP_Link.Migrations
 {
     [DbContext(typeof(ApplicationDbContext))]
-    [Migration("20250725153336_AddLecturerSeeding")]
-    partial class AddLecturerSeeding
+    [Migration("20250728070334_InitialCreate")]
+    partial class InitialCreate
     {
         /// <inheritdoc />
         protected override void BuildTargetModel(ModelBuilder modelBuilder)
@@ -294,6 +294,86 @@ namespace FYP_Link.Migrations
                             SecurityStamp = "b18be9c0-aa65-4af8-bd17-00bd9344e610",
                             TwoFactorEnabled = false,
                             UserName = "lecturer10@example.com"
+                        },
+                        new
+                        {
+                            Id = "s1-uid",
+                            AccessFailedCount = 0,
+                            ConcurrencyStamp = "s1-uid-con",
+                            Email = "student1@example.com",
+                            EmailConfirmed = true,
+                            LockoutEnabled = false,
+                            NormalizedEmail = "STUDENT1@EXAMPLE.COM",
+                            NormalizedUserName = "STUDENT1@EXAMPLE.COM",
+                            PasswordHash = "AQAAAAIAAYagAAAAEEZXQJGDm/Zq+YxDFhLhQbYIhYYBRvX2KwGGGpZZOQzGHgXYoQB0J7LxVJXZBQUJZw==",
+                            PhoneNumberConfirmed = false,
+                            SecurityStamp = "s1-uid-sec",
+                            TwoFactorEnabled = false,
+                            UserName = "student1@example.com"
+                        },
+                        new
+                        {
+                            Id = "s2-uid",
+                            AccessFailedCount = 0,
+                            ConcurrencyStamp = "s2-uid-con",
+                            Email = "student2@example.com",
+                            EmailConfirmed = true,
+                            LockoutEnabled = false,
+                            NormalizedEmail = "STUDENT2@EXAMPLE.COM",
+                            NormalizedUserName = "STUDENT2@EXAMPLE.COM",
+                            PasswordHash = "AQAAAAIAAYagAAAAEEZXQJGDm/Zq+YxDFhLhQbYIhYYBRvX2KwGGGpZZOQzGHgXYoQB0J7LxVJXZBQUJZw==",
+                            PhoneNumberConfirmed = false,
+                            SecurityStamp = "s2-uid-sec",
+                            TwoFactorEnabled = false,
+                            UserName = "student2@example.com"
+                        },
+                        new
+                        {
+                            Id = "s3-uid",
+                            AccessFailedCount = 0,
+                            ConcurrencyStamp = "s3-uid-con",
+                            Email = "student3@example.com",
+                            EmailConfirmed = true,
+                            LockoutEnabled = false,
+                            NormalizedEmail = "STUDENT3@EXAMPLE.COM",
+                            NormalizedUserName = "STUDENT3@EXAMPLE.COM",
+                            PasswordHash = "AQAAAAIAAYagAAAAEEZXQJGDm/Zq+YxDFhLhQbYIhYYBRvX2KwGGGpZZOQzGHgXYoQB0J7LxVJXZBQUJZw==",
+                            PhoneNumberConfirmed = false,
+                            SecurityStamp = "s3-uid-sec",
+                            TwoFactorEnabled = false,
+                            UserName = "student3@example.com"
+                        },
+                        new
+                        {
+                            Id = "s4-uid",
+                            AccessFailedCount = 0,
+                            ConcurrencyStamp = "s4-uid-con",
+                            Email = "student4@example.com",
+                            EmailConfirmed = true,
+                            LockoutEnabled = false,
+                            NormalizedEmail = "STUDENT4@EXAMPLE.COM",
+                            NormalizedUserName = "STUDENT4@EXAMPLE.COM",
+                            PasswordHash = "AQAAAAIAAYagAAAAEEZXQJGDm/Zq+YxDFhLhQbYIhYYBRvX2KwGGGpZZOQzGHgXYoQB0J7LxVJXZBQUJZw==",
+                            PhoneNumberConfirmed = false,
+                            SecurityStamp = "s4-uid-sec",
+                            TwoFactorEnabled = false,
+                            UserName = "student4@example.com"
+                        },
+                        new
+                        {
+                            Id = "s5-uid",
+                            AccessFailedCount = 0,
+                            ConcurrencyStamp = "s5-uid-con",
+                            Email = "student5@example.com",
+                            EmailConfirmed = true,
+                            LockoutEnabled = false,
+                            NormalizedEmail = "STUDENT5@EXAMPLE.COM",
+                            NormalizedUserName = "STUDENT5@EXAMPLE.COM",
+                            PasswordHash = "AQAAAAIAAYagAAAAEEZXQJGDm/Zq+YxDFhLhQbYIhYYBRvX2KwGGGpZZOQzGHgXYoQB0J7LxVJXZBQUJZw==",
+                            PhoneNumberConfirmed = false,
+                            SecurityStamp = "s5-uid-sec",
+                            TwoFactorEnabled = false,
+                            UserName = "student5@example.com"
                         });
                 });
 
@@ -310,6 +390,125 @@ namespace FYP_Link.Migrations
                     b.HasIndex("AcademicProgramId");
 
                     b.ToTable("CommitteeMemberships");
+                });
+
+            modelBuilder.Entity("FYP_Link.Models.Evaluation", b =>
+                {
+                    b.Property<int>("Id")
+                        .ValueGeneratedOnAdd()
+                        .HasColumnType("integer");
+
+                    NpgsqlPropertyBuilderExtensions.UseIdentityByDefaultColumn(b.Property<int>("Id"));
+
+                    b.Property<string>("Comments")
+                        .IsRequired()
+                        .HasColumnType("text");
+
+                    b.Property<DateTime>("CreatedAt")
+                        .HasColumnType("timestamp with time zone");
+
+                    b.Property<int>("EvaluatorId")
+                        .HasColumnType("integer");
+
+                    b.Property<bool>("IsCurrent")
+                        .HasColumnType("boolean");
+
+                    b.Property<int>("ProposalId")
+                        .HasColumnType("integer");
+
+                    b.Property<string>("Result")
+                        .IsRequired()
+                        .HasColumnType("text");
+
+                    b.HasKey("Id");
+
+                    b.HasIndex("EvaluatorId");
+
+                    b.HasIndex("ProposalId");
+
+                    b.ToTable("Evaluations");
+
+                    b.HasData(
+                        new
+                        {
+                            Id = 1,
+                            Comments = "Good idea, but needs more detail on implementation.",
+                            CreatedAt = new DateTime(2025, 7, 28, 7, 3, 33, 574, DateTimeKind.Utc).AddTicks(846),
+                            EvaluatorId = 106,
+                            IsCurrent = true,
+                            ProposalId = 1,
+                            Result = "Accepted with Conditions"
+                        },
+                        new
+                        {
+                            Id = 2,
+                            Comments = "Solid methodology and clear outcomes.",
+                            CreatedAt = new DateTime(2025, 7, 28, 7, 3, 33, 574, DateTimeKind.Utc).AddTicks(2059),
+                            EvaluatorId = 110,
+                            IsCurrent = true,
+                            ProposalId = 1,
+                            Result = "Accepted"
+                        },
+                        new
+                        {
+                            Id = 3,
+                            Comments = "The scope is too broad for a single semester.",
+                            CreatedAt = new DateTime(2025, 7, 28, 7, 3, 33, 574, DateTimeKind.Utc).AddTicks(2082),
+                            EvaluatorId = 107,
+                            IsCurrent = true,
+                            ProposalId = 2,
+                            Result = "Rejected"
+                        },
+                        new
+                        {
+                            Id = 4,
+                            Comments = "Excellent proposal with clear objectives.",
+                            CreatedAt = new DateTime(2025, 7, 28, 7, 3, 33, 574, DateTimeKind.Utc).AddTicks(2101),
+                            EvaluatorId = 108,
+                            IsCurrent = true,
+                            ProposalId = 3,
+                            Result = "Accepted"
+                        },
+                        new
+                        {
+                            Id = 5,
+                            Comments = "Solid methodology and clear outcomes.",
+                            CreatedAt = new DateTime(2025, 7, 28, 7, 3, 33, 574, DateTimeKind.Utc).AddTicks(2119),
+                            EvaluatorId = 108,
+                            IsCurrent = true,
+                            ProposalId = 3,
+                            Result = "Accepted"
+                        },
+                        new
+                        {
+                            Id = 6,
+                            Comments = "Please clarify the data sources.",
+                            CreatedAt = new DateTime(2025, 7, 28, 7, 3, 33, 574, DateTimeKind.Utc).AddTicks(2139),
+                            EvaluatorId = 109,
+                            IsCurrent = true,
+                            ProposalId = 4,
+                            Result = "Accepted with Minor Revisions"
+                        },
+                        new
+                        {
+                            Id = 7,
+                            Comments = "Well-structured and feasible project.",
+                            CreatedAt = new DateTime(2025, 7, 28, 7, 3, 33, 574, DateTimeKind.Utc).AddTicks(2157),
+                            EvaluatorId = 110,
+                            IsCurrent = true,
+                            ProposalId = 5,
+                            Result = "Accepted"
+                        },
+                        new
+                        {
+                            Id = 8,
+                            Comments = "Solid methodology and clear outcomes.",
+                            CreatedAt = new DateTime(2025, 7, 28, 7, 3, 33, 574, DateTimeKind.Utc).AddTicks(2176),
+                            EvaluatorId = 106,
+                            IsCurrent = true,
+                            ProposalId = 5,
+                            Result = "Accepted"
+                        });
                 });
 
             modelBuilder.Entity("FYP_Link.Models.Lecturer", b =>
@@ -337,6 +536,13 @@ namespace FYP_Link.Migrations
                         .IsRequired()
                         .HasMaxLength(100)
                         .HasColumnType("character varying(100)");
+
+                    b.Property<string>("Domain")
+                        .HasColumnType("text");
+
+                    b.Property<string>("Email")
+                        .IsRequired()
+                        .HasColumnType("text");
 
                     b.Property<string>("Name")
                         .IsRequired()
@@ -366,6 +572,7 @@ namespace FYP_Link.Migrations
                             CreatedAt = new DateTime(2024, 1, 1, 0, 0, 0, 0, DateTimeKind.Utc),
                             CurrentPosition = "SeniorLecturer",
                             Department = "Information Technology",
+                            Email = "",
                             Name = "Dr. Lecturer 1",
                             StaffId = "STAFF00001"
                         },
@@ -376,6 +583,7 @@ namespace FYP_Link.Migrations
                             CreatedAt = new DateTime(2024, 1, 1, 0, 0, 0, 0, DateTimeKind.Utc),
                             CurrentPosition = "AssociateProfessor",
                             Department = "Software Engineering",
+                            Email = "",
                             Name = "Dr. Lecturer 2",
                             StaffId = "STAFF00002"
                         },
@@ -386,6 +594,7 @@ namespace FYP_Link.Migrations
                             CreatedAt = new DateTime(2024, 1, 1, 0, 0, 0, 0, DateTimeKind.Utc),
                             CurrentPosition = "Professor",
                             Department = "Data Science",
+                            Email = "",
                             Name = "Dr. Lecturer 3",
                             StaffId = "STAFF00003"
                         },
@@ -396,6 +605,7 @@ namespace FYP_Link.Migrations
                             CreatedAt = new DateTime(2024, 1, 1, 0, 0, 0, 0, DateTimeKind.Utc),
                             CurrentPosition = "Lecturer",
                             Department = "Cybersecurity",
+                            Email = "",
                             Name = "Dr. Lecturer 4",
                             StaffId = "STAFF00004"
                         },
@@ -406,6 +616,7 @@ namespace FYP_Link.Migrations
                             CreatedAt = new DateTime(2024, 1, 1, 0, 0, 0, 0, DateTimeKind.Utc),
                             CurrentPosition = "SeniorLecturer",
                             Department = "Computer Science",
+                            Email = "",
                             Name = "Dr. Lecturer 5",
                             StaffId = "STAFF00005"
                         },
@@ -416,6 +627,7 @@ namespace FYP_Link.Migrations
                             CreatedAt = new DateTime(2024, 1, 1, 0, 0, 0, 0, DateTimeKind.Utc),
                             CurrentPosition = "AssociateProfessor",
                             Department = "Information Technology",
+                            Email = "",
                             Name = "Dr. Lecturer 6",
                             StaffId = "STAFF00006"
                         },
@@ -426,6 +638,7 @@ namespace FYP_Link.Migrations
                             CreatedAt = new DateTime(2024, 1, 1, 0, 0, 0, 0, DateTimeKind.Utc),
                             CurrentPosition = "Professor",
                             Department = "Software Engineering",
+                            Email = "",
                             Name = "Dr. Lecturer 7",
                             StaffId = "STAFF00007"
                         },
@@ -436,6 +649,7 @@ namespace FYP_Link.Migrations
                             CreatedAt = new DateTime(2024, 1, 1, 0, 0, 0, 0, DateTimeKind.Utc),
                             CurrentPosition = "Lecturer",
                             Department = "Data Science",
+                            Email = "",
                             Name = "Dr. Lecturer 8",
                             StaffId = "STAFF00008"
                         },
@@ -446,6 +660,7 @@ namespace FYP_Link.Migrations
                             CreatedAt = new DateTime(2024, 1, 1, 0, 0, 0, 0, DateTimeKind.Utc),
                             CurrentPosition = "SeniorLecturer",
                             Department = "Cybersecurity",
+                            Email = "",
                             Name = "Dr. Lecturer 9",
                             StaffId = "STAFF00009"
                         },
@@ -456,8 +671,210 @@ namespace FYP_Link.Migrations
                             CreatedAt = new DateTime(2024, 1, 1, 0, 0, 0, 0, DateTimeKind.Utc),
                             CurrentPosition = "AssociateProfessor",
                             Department = "Computer Science",
+                            Email = "",
                             Name = "Dr. Lecturer 10",
                             StaffId = "STAFF00010"
+                        });
+                });
+
+            modelBuilder.Entity("FYP_Link.Models.Proposal", b =>
+                {
+                    b.Property<int>("Id")
+                        .ValueGeneratedOnAdd()
+                        .HasColumnType("integer");
+
+                    NpgsqlPropertyBuilderExtensions.UseIdentityByDefaultColumn(b.Property<int>("Id"));
+
+                    b.Property<string>("Abstract")
+                        .IsRequired()
+                        .HasColumnType("text");
+
+                    b.Property<string>("AcademicSession")
+                        .IsRequired()
+                        .HasMaxLength(20)
+                        .HasColumnType("character varying(20)");
+
+                    b.Property<string>("PdfFilePath")
+                        .HasColumnType("text");
+
+                    b.Property<string>("ProjectType")
+                        .IsRequired()
+                        .HasColumnType("text");
+
+                    b.Property<int>("Semester")
+                        .HasColumnType("integer");
+
+                    b.Property<int>("StudentId")
+                        .HasColumnType("integer");
+
+                    b.Property<string>("SupervisorComment")
+                        .HasColumnType("text");
+
+                    b.Property<DateTime?>("SupervisorCommentedAt")
+                        .HasColumnType("timestamp with time zone");
+
+                    b.Property<int>("SupervisorId")
+                        .HasColumnType("integer");
+
+                    b.Property<string>("Title")
+                        .IsRequired()
+                        .HasMaxLength(200)
+                        .HasColumnType("character varying(200)");
+
+                    b.HasKey("Id");
+
+                    b.HasIndex("StudentId")
+                        .IsUnique();
+
+                    b.HasIndex("SupervisorId");
+
+                    b.ToTable("Proposals");
+
+                    b.HasData(
+                        new
+                        {
+                            Id = 1,
+                            Abstract = "A system using facial recognition and AI to automate student attendance.",
+                            AcademicSession = "2024/2025",
+                            ProjectType = "Research",
+                            Semester = 1,
+                            StudentId = 201,
+                            SupervisorId = 101,
+                            Title = "AI-Powered Attendance System"
+                        },
+                        new
+                        {
+                            Id = 2,
+                            Abstract = "A secure blockchain solution for storing and verifying academic records.",
+                            AcademicSession = "2024/2025",
+                            ProjectType = "Development",
+                            Semester = 1,
+                            StudentId = 202,
+                            SupervisorId = 102,
+                            Title = "Blockchain for Academic Records"
+                        },
+                        new
+                        {
+                            Id = 3,
+                            Abstract = "An IoT-based greenhouse that monitors and controls climate for optimal plant growth.",
+                            AcademicSession = "2024/2025",
+                            ProjectType = "Research",
+                            Semester = 1,
+                            StudentId = 203,
+                            SupervisorId = 103,
+                            Title = "IoT Smart Greenhouse"
+                        },
+                        new
+                        {
+                            Id = 4,
+                            Abstract = "A mobile application that helps students navigate campus buildings and facilities.",
+                            AcademicSession = "2024/2025",
+                            ProjectType = "Development",
+                            Semester = 1,
+                            StudentId = 204,
+                            SupervisorId = 104,
+                            Title = "Mobile App for Campus Navigation"
+                        },
+                        new
+                        {
+                            Id = 5,
+                            Abstract = "A data analytics platform to analyze and predict student academic performance.",
+                            AcademicSession = "2024/2025",
+                            ProjectType = "Research",
+                            Semester = 1,
+                            StudentId = 205,
+                            SupervisorId = 105,
+                            Title = "Data Analytics for Student Performance"
+                        });
+                });
+
+            modelBuilder.Entity("FYP_Link.Models.Student", b =>
+                {
+                    b.Property<int>("Id")
+                        .ValueGeneratedOnAdd()
+                        .HasColumnType("integer");
+
+                    NpgsqlPropertyBuilderExtensions.UseIdentityByDefaultColumn(b.Property<int>("Id"));
+
+                    b.Property<string>("ApplicationUserId")
+                        .IsRequired()
+                        .HasColumnType("text");
+
+                    b.Property<string>("ApprovalStatus")
+                        .IsRequired()
+                        .HasColumnType("text");
+
+                    b.Property<string>("MatricNumber")
+                        .IsRequired()
+                        .HasColumnType("text");
+
+                    b.Property<string>("Name")
+                        .IsRequired()
+                        .HasColumnType("text");
+
+                    b.Property<int?>("SupervisorId")
+                        .HasColumnType("integer");
+
+                    b.Property<DateTime?>("UpdatedAt")
+                        .HasColumnType("timestamp with time zone");
+
+                    b.HasKey("Id");
+
+                    b.HasIndex("ApplicationUserId")
+                        .IsUnique();
+
+                    b.HasIndex("MatricNumber")
+                        .IsUnique();
+
+                    b.HasIndex("SupervisorId");
+
+                    b.ToTable("Students");
+
+                    b.HasData(
+                        new
+                        {
+                            Id = 201,
+                            ApplicationUserId = "s1-uid",
+                            ApprovalStatus = "Approved",
+                            MatricNumber = "A22EC1001",
+                            Name = "Alice Tan",
+                            SupervisorId = 101
+                        },
+                        new
+                        {
+                            Id = 202,
+                            ApplicationUserId = "s2-uid",
+                            ApprovalStatus = "Approved",
+                            MatricNumber = "A22EC1002",
+                            Name = "Bob Lee",
+                            SupervisorId = 102
+                        },
+                        new
+                        {
+                            Id = 203,
+                            ApplicationUserId = "s3-uid",
+                            ApprovalStatus = "Approved",
+                            MatricNumber = "A22EC1003",
+                            Name = "Chloe Lim",
+                            SupervisorId = 103
+                        },
+                        new
+                        {
+                            Id = 204,
+                            ApplicationUserId = "s4-uid",
+                            ApprovalStatus = "Approved",
+                            MatricNumber = "A22EC1004",
+                            Name = "Daniel Wong",
+                            SupervisorId = 104
+                        },
+                        new
+                        {
+                            Id = 205,
+                            ApplicationUserId = "s5-uid",
+                            ApprovalStatus = "Approved",
+                            MatricNumber = "A22EC1005",
+                            Name = "Evelyn Ng",
+                            SupervisorId = 105
                         });
                 });
 
@@ -660,6 +1077,31 @@ namespace FYP_Link.Migrations
                         {
                             UserId = "b18be9c0-aa65-4af8-bd17-00bd9344e510",
                             RoleId = "a18be9c0-aa65-4af8-bd17-00bd9344e577"
+                        },
+                        new
+                        {
+                            UserId = "s1-uid",
+                            RoleId = "a18be9c0-aa65-4af8-bd17-00bd9344e576"
+                        },
+                        new
+                        {
+                            UserId = "s2-uid",
+                            RoleId = "a18be9c0-aa65-4af8-bd17-00bd9344e576"
+                        },
+                        new
+                        {
+                            UserId = "s3-uid",
+                            RoleId = "a18be9c0-aa65-4af8-bd17-00bd9344e576"
+                        },
+                        new
+                        {
+                            UserId = "s4-uid",
+                            RoleId = "a18be9c0-aa65-4af8-bd17-00bd9344e576"
+                        },
+                        new
+                        {
+                            UserId = "s5-uid",
+                            RoleId = "a18be9c0-aa65-4af8-bd17-00bd9344e576"
                         });
                 });
 
@@ -701,6 +1143,25 @@ namespace FYP_Link.Migrations
                     b.Navigation("Lecturer");
                 });
 
+            modelBuilder.Entity("FYP_Link.Models.Evaluation", b =>
+                {
+                    b.HasOne("FYP_Link.Models.Lecturer", "Evaluator")
+                        .WithMany()
+                        .HasForeignKey("EvaluatorId")
+                        .OnDelete(DeleteBehavior.Cascade)
+                        .IsRequired();
+
+                    b.HasOne("FYP_Link.Models.Proposal", "Proposal")
+                        .WithMany("Evaluations")
+                        .HasForeignKey("ProposalId")
+                        .OnDelete(DeleteBehavior.Cascade)
+                        .IsRequired();
+
+                    b.Navigation("Evaluator");
+
+                    b.Navigation("Proposal");
+                });
+
             modelBuilder.Entity("FYP_Link.Models.Lecturer", b =>
                 {
                     b.HasOne("FYP_Link.Models.ApplicationUser", "ApplicationUser")
@@ -710,6 +1171,42 @@ namespace FYP_Link.Migrations
                         .IsRequired();
 
                     b.Navigation("ApplicationUser");
+                });
+
+            modelBuilder.Entity("FYP_Link.Models.Proposal", b =>
+                {
+                    b.HasOne("FYP_Link.Models.Student", "Student")
+                        .WithOne("Proposal")
+                        .HasForeignKey("FYP_Link.Models.Proposal", "StudentId")
+                        .OnDelete(DeleteBehavior.Cascade)
+                        .IsRequired();
+
+                    b.HasOne("FYP_Link.Models.Lecturer", "Supervisor")
+                        .WithMany()
+                        .HasForeignKey("SupervisorId")
+                        .OnDelete(DeleteBehavior.Cascade)
+                        .IsRequired();
+
+                    b.Navigation("Student");
+
+                    b.Navigation("Supervisor");
+                });
+
+            modelBuilder.Entity("FYP_Link.Models.Student", b =>
+                {
+                    b.HasOne("FYP_Link.Models.ApplicationUser", "ApplicationUser")
+                        .WithOne()
+                        .HasForeignKey("FYP_Link.Models.Student", "ApplicationUserId")
+                        .OnDelete(DeleteBehavior.Cascade)
+                        .IsRequired();
+
+                    b.HasOne("FYP_Link.Models.Lecturer", "Supervisor")
+                        .WithMany()
+                        .HasForeignKey("SupervisorId");
+
+                    b.Navigation("ApplicationUser");
+
+                    b.Navigation("Supervisor");
                 });
 
             modelBuilder.Entity("Microsoft.AspNetCore.Identity.IdentityRoleClaim<string>", b =>
@@ -761,6 +1258,16 @@ namespace FYP_Link.Migrations
                         .HasForeignKey("UserId")
                         .OnDelete(DeleteBehavior.Cascade)
                         .IsRequired();
+                });
+
+            modelBuilder.Entity("FYP_Link.Models.Proposal", b =>
+                {
+                    b.Navigation("Evaluations");
+                });
+
+            modelBuilder.Entity("FYP_Link.Models.Student", b =>
+                {
+                    b.Navigation("Proposal");
                 });
 #pragma warning restore 612, 618
         }

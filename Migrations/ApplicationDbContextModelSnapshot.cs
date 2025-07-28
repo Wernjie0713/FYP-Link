@@ -401,6 +401,9 @@ namespace FYP_Link.Migrations
                         .IsRequired()
                         .HasColumnType("text");
 
+                    b.Property<DateTime>("CreatedAt")
+                        .HasColumnType("timestamp with time zone");
+
                     b.Property<int>("EvaluatorId")
                         .HasColumnType("integer");
 
@@ -427,6 +430,7 @@ namespace FYP_Link.Migrations
                         {
                             Id = 1,
                             Comments = "Good idea, but needs more detail on implementation.",
+                            CreatedAt = new DateTime(2025, 7, 28, 7, 3, 33, 574, DateTimeKind.Utc).AddTicks(846),
                             EvaluatorId = 106,
                             IsCurrent = true,
                             ProposalId = 1,
@@ -436,6 +440,7 @@ namespace FYP_Link.Migrations
                         {
                             Id = 2,
                             Comments = "Solid methodology and clear outcomes.",
+                            CreatedAt = new DateTime(2025, 7, 28, 7, 3, 33, 574, DateTimeKind.Utc).AddTicks(2059),
                             EvaluatorId = 110,
                             IsCurrent = true,
                             ProposalId = 1,
@@ -445,6 +450,7 @@ namespace FYP_Link.Migrations
                         {
                             Id = 3,
                             Comments = "The scope is too broad for a single semester.",
+                            CreatedAt = new DateTime(2025, 7, 28, 7, 3, 33, 574, DateTimeKind.Utc).AddTicks(2082),
                             EvaluatorId = 107,
                             IsCurrent = true,
                             ProposalId = 2,
@@ -454,6 +460,7 @@ namespace FYP_Link.Migrations
                         {
                             Id = 4,
                             Comments = "Excellent proposal with clear objectives.",
+                            CreatedAt = new DateTime(2025, 7, 28, 7, 3, 33, 574, DateTimeKind.Utc).AddTicks(2101),
                             EvaluatorId = 108,
                             IsCurrent = true,
                             ProposalId = 3,
@@ -463,6 +470,7 @@ namespace FYP_Link.Migrations
                         {
                             Id = 5,
                             Comments = "Solid methodology and clear outcomes.",
+                            CreatedAt = new DateTime(2025, 7, 28, 7, 3, 33, 574, DateTimeKind.Utc).AddTicks(2119),
                             EvaluatorId = 108,
                             IsCurrent = true,
                             ProposalId = 3,
@@ -472,6 +480,7 @@ namespace FYP_Link.Migrations
                         {
                             Id = 6,
                             Comments = "Please clarify the data sources.",
+                            CreatedAt = new DateTime(2025, 7, 28, 7, 3, 33, 574, DateTimeKind.Utc).AddTicks(2139),
                             EvaluatorId = 109,
                             IsCurrent = true,
                             ProposalId = 4,
@@ -481,6 +490,7 @@ namespace FYP_Link.Migrations
                         {
                             Id = 7,
                             Comments = "Well-structured and feasible project.",
+                            CreatedAt = new DateTime(2025, 7, 28, 7, 3, 33, 574, DateTimeKind.Utc).AddTicks(2157),
                             EvaluatorId = 110,
                             IsCurrent = true,
                             ProposalId = 5,
@@ -490,6 +500,7 @@ namespace FYP_Link.Migrations
                         {
                             Id = 8,
                             Comments = "Solid methodology and clear outcomes.",
+                            CreatedAt = new DateTime(2025, 7, 28, 7, 3, 33, 574, DateTimeKind.Utc).AddTicks(2176),
                             EvaluatorId = 106,
                             IsCurrent = true,
                             ProposalId = 5,
@@ -526,6 +537,10 @@ namespace FYP_Link.Migrations
                     b.Property<string>("Domain")
                         .HasColumnType("text");
 
+                    b.Property<string>("Email")
+                        .IsRequired()
+                        .HasColumnType("text");
+
                     b.Property<string>("Name")
                         .IsRequired()
                         .HasMaxLength(100)
@@ -554,6 +569,7 @@ namespace FYP_Link.Migrations
                             CreatedAt = new DateTime(2024, 1, 1, 0, 0, 0, 0, DateTimeKind.Utc),
                             CurrentPosition = "SeniorLecturer",
                             Department = "Information Technology",
+                            Email = "",
                             Name = "Dr. Lecturer 1",
                             StaffId = "STAFF00001"
                         },
@@ -564,6 +580,7 @@ namespace FYP_Link.Migrations
                             CreatedAt = new DateTime(2024, 1, 1, 0, 0, 0, 0, DateTimeKind.Utc),
                             CurrentPosition = "AssociateProfessor",
                             Department = "Software Engineering",
+                            Email = "",
                             Name = "Dr. Lecturer 2",
                             StaffId = "STAFF00002"
                         },
@@ -574,6 +591,7 @@ namespace FYP_Link.Migrations
                             CreatedAt = new DateTime(2024, 1, 1, 0, 0, 0, 0, DateTimeKind.Utc),
                             CurrentPosition = "Professor",
                             Department = "Data Science",
+                            Email = "",
                             Name = "Dr. Lecturer 3",
                             StaffId = "STAFF00003"
                         },
@@ -584,6 +602,7 @@ namespace FYP_Link.Migrations
                             CreatedAt = new DateTime(2024, 1, 1, 0, 0, 0, 0, DateTimeKind.Utc),
                             CurrentPosition = "Lecturer",
                             Department = "Cybersecurity",
+                            Email = "",
                             Name = "Dr. Lecturer 4",
                             StaffId = "STAFF00004"
                         },
@@ -594,6 +613,7 @@ namespace FYP_Link.Migrations
                             CreatedAt = new DateTime(2024, 1, 1, 0, 0, 0, 0, DateTimeKind.Utc),
                             CurrentPosition = "SeniorLecturer",
                             Department = "Computer Science",
+                            Email = "",
                             Name = "Dr. Lecturer 5",
                             StaffId = "STAFF00005"
                         },
@@ -604,6 +624,7 @@ namespace FYP_Link.Migrations
                             CreatedAt = new DateTime(2024, 1, 1, 0, 0, 0, 0, DateTimeKind.Utc),
                             CurrentPosition = "AssociateProfessor",
                             Department = "Information Technology",
+                            Email = "",
                             Name = "Dr. Lecturer 6",
                             StaffId = "STAFF00006"
                         },
@@ -614,6 +635,7 @@ namespace FYP_Link.Migrations
                             CreatedAt = new DateTime(2024, 1, 1, 0, 0, 0, 0, DateTimeKind.Utc),
                             CurrentPosition = "Professor",
                             Department = "Software Engineering",
+                            Email = "",
                             Name = "Dr. Lecturer 7",
                             StaffId = "STAFF00007"
                         },
@@ -624,6 +646,7 @@ namespace FYP_Link.Migrations
                             CreatedAt = new DateTime(2024, 1, 1, 0, 0, 0, 0, DateTimeKind.Utc),
                             CurrentPosition = "Lecturer",
                             Department = "Data Science",
+                            Email = "",
                             Name = "Dr. Lecturer 8",
                             StaffId = "STAFF00008"
                         },
@@ -634,6 +657,7 @@ namespace FYP_Link.Migrations
                             CreatedAt = new DateTime(2024, 1, 1, 0, 0, 0, 0, DateTimeKind.Utc),
                             CurrentPosition = "SeniorLecturer",
                             Department = "Cybersecurity",
+                            Email = "",
                             Name = "Dr. Lecturer 9",
                             StaffId = "STAFF00009"
                         },
@@ -644,6 +668,7 @@ namespace FYP_Link.Migrations
                             CreatedAt = new DateTime(2024, 1, 1, 0, 0, 0, 0, DateTimeKind.Utc),
                             CurrentPosition = "AssociateProfessor",
                             Department = "Computer Science",
+                            Email = "",
                             Name = "Dr. Lecturer 10",
                             StaffId = "STAFF00010"
                         });
@@ -679,6 +704,12 @@ namespace FYP_Link.Migrations
                     b.Property<int>("StudentId")
                         .HasColumnType("integer");
 
+                    b.Property<string>("SupervisorComment")
+                        .HasColumnType("text");
+
+                    b.Property<DateTime?>("SupervisorCommentedAt")
+                        .HasColumnType("timestamp with time zone");
+
                     b.Property<int>("SupervisorId")
                         .HasColumnType("integer");
 
@@ -689,7 +720,8 @@ namespace FYP_Link.Migrations
 
                     b.HasKey("Id");
 
-                    b.HasIndex("StudentId");
+                    b.HasIndex("StudentId")
+                        .IsUnique();
 
                     b.HasIndex("SupervisorId");
 
@@ -1141,8 +1173,8 @@ namespace FYP_Link.Migrations
             modelBuilder.Entity("FYP_Link.Models.Proposal", b =>
                 {
                     b.HasOne("FYP_Link.Models.Student", "Student")
-                        .WithMany("Proposals")
-                        .HasForeignKey("StudentId")
+                        .WithOne("Proposal")
+                        .HasForeignKey("FYP_Link.Models.Proposal", "StudentId")
                         .OnDelete(DeleteBehavior.Cascade)
                         .IsRequired();
 
@@ -1232,7 +1264,7 @@ namespace FYP_Link.Migrations
 
             modelBuilder.Entity("FYP_Link.Models.Student", b =>
                 {
-                    b.Navigation("Proposals");
+                    b.Navigation("Proposal");
                 });
 #pragma warning restore 612, 618
         }

@@ -24,6 +24,8 @@ export default function Sidebar() {
   const canViewLecturers = user?.roles?.includes('Admin') || user?.roles?.includes('Committee');
   const isCommittee = user?.roles?.includes('Committee');
   const isStudent = user?.roles?.includes('Student');
+  const isSupervisor = user?.roles?.includes('Supervisor');
+  const isEvaluator = user?.roles?.includes('Evaluator');
   
   // Fetch student profile and proposal status if user is a student
   useEffect(() => {
@@ -45,8 +47,6 @@ export default function Sidebar() {
 
   const navLinks = [
     { path: '/dashboard', icon: <RxDashboard size={20} />, label: 'Dashboard' },
-    // Show Proposals link only for non-admin users
-    ...(!isAdmin ? [{ path: '/proposals', icon: <FiFileText size={20} />, label: 'Proposals' }] : []),
     // Student-specific links
     ...(isStudent ? [
       { path: '/student/select-supervisor', icon: <FiUserPlus size={20} />, label: 'Select Supervisor' },
@@ -66,6 +66,14 @@ export default function Sidebar() {
       { path: '/committee/approvals', icon: <FiFileText size={20} />, label: 'Supervisor Approvals' },
       { path: '/committee/proposals', icon: <FiFileText size={20} />, label: 'Manage Proposals' }
     ] : []),
+    // Supervisor-only link
+    ...(isSupervisor ? [
+      { path: '/supervisor/my-students', icon: <FiUsers size={20} />, label: 'My Students' }
+    ] : []),
+    // Evaluator-only link
+    ...(isEvaluator ? [
+      { path: '/evaluator/my-assignments', icon: <FiFileText size={20} />, label: 'My Evaluation Assignments' }
+    ] : []),
     // Admin-only links
     ...(isAdmin ? [
       { path: '/admin/programs', icon: <FiBook size={20} />, label: 'Academic Programs' },
@@ -84,9 +92,15 @@ export default function Sidebar() {
           <FiUser size={20} className="text-gray-500 mr-3" />
           <div>
             <p className="text-sm text-gray-500">Logged in as:</p>
-            <p className="text-sm font-medium text-gray-900 truncate">{user?.email}</p>
+            {/* <p className="text-sm font-medium text-gray-900 truncate">{user?.email}</p> */}
             {isAdmin && (
               <p className="text-xs text-teal-600 mt-1">Administrator</p>
+            )}
+            {isStudent && (
+              <p className="text-xs text-teal-600 mt-1">Student</p>
+            )}
+            {isSupervisor && (
+              <p className="text-xs text-teal-600 mt-1">Supervisor</p>
             )}
           </div>
         </div>

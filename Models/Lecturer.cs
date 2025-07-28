@@ -32,5 +32,9 @@ namespace FYP_Link.Models
         public DateTime? UpdatedAt { get; set; }
 
         public string? Domain { get; set; }
+
+        [Required]
+        [EmailAddress]
+        public string Email { get; set; } = string.Empty;
     }
 }

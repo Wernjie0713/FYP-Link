@@ -102,4 +102,28 @@ app.UseAuthorization();
 
 app.MapControllers();
 
+// Seed the database in development environment
+if (app.Environment.IsDevelopment())
+{
+    using (var scope = app.Services.CreateScope())
+    {
+        var services = scope.ServiceProvider;
+        try
+        {
+            var context = services.GetRequiredService<ApplicationDbContext>();
+            var userManager = services.GetRequiredService<UserManager<ApplicationUser>>();
+            var roleManager = services.GetRequiredService<RoleManager<IdentityRole>>();
+            
+            await FYP_Link.Data.Seed.DbSeeder.SeedDatabaseAsync(context, userManager, roleManager);
+            
+            Console.WriteLine("Database seeded successfully.");
+        }
+        catch (Exception ex)
+        {
+            var logger = services.GetRequiredService<ILogger<Program>>();
+            logger.LogError(ex, "An error occurred while seeding the database.");
+        }
+    }
+}
+
 app.Run();

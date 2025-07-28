@@ -30,7 +30,7 @@ namespace FYP_Link.Models
 
         public DateTime? UpdatedAt { get; set; }
 
-        // Navigation property for proposals
-        public ICollection<Proposal> Proposals { get; set; } = new List<Proposal>();
+        // Navigation property for proposal (one-to-one)
+        public Proposal? Proposal { get; set; }
     }
 }

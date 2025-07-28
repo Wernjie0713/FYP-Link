@@ -82,6 +82,8 @@ const MyProposal = () => {
     }
   };
 
+  console.log(proposal)
+
   return (
     <div className="container mx-auto px-4 py-8">
       <h1 className="text-2xl font-bold mb-6">My Project Proposal</h1>
@@ -122,6 +124,20 @@ const MyProposal = () => {
               </svg>
               View Uploaded PDF
             </a>
+          </div>
+        )}
+        
+        {proposal.supervisorComment && (
+          <div className="mb-6">
+            <h3 className="text-lg font-medium text-gray-700 mb-2">Supervisor's Initial Comments</h3>
+            <div className="bg-slate-50 p-4 rounded-md border border-slate-200">
+              <p className="text-gray-700 whitespace-pre-line">{proposal.supervisorComment}</p>
+              {proposal.supervisorCommentedAt && (
+                <p className="text-xs text-gray-500 mt-2">
+                  Commented on: {new Date(proposal.supervisorCommentedAt).toLocaleString()}
+                </p>
+              )}
+            </div>
           </div>
         )}
         
